@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">WordsApp</string>
+    <string name="detail_prefix">Kata yang dimulai dari</string>
+    <string name="action_switch_layout">Switch Layout</string>
+    <string name="cari_kata">Cari kata di browser</string>
+    <string name="kata_yang_didata">Tunjukkan kata yang telah didata</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

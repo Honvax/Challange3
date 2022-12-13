@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="words">
+        <item>ant</item>
+        <item>armadillo</item>
+        <item>anaconda</item>
+        <item>broken</item>
+        <item>burn</item>
+        <item>bake</item>
+        <item>cake</item>
+        <item>crispy</item>
+        <item>crepes</item>
+        <item>daisy</item>
+        <item>downhill</item>
+        <item>drained</item>
+        <item>eagle</item>
+        <item>essay</item>
+        <item>economy</item>
+        <item>frequency</item>
+        <item>fahrenheit</item>
+        <item>family</item>
+        <item>ground</item>
+        <item>game</item>
+        <item>grown</item>
+        <item>high</item>
+        <item>height</item>
+        <item>handsome</item>
+        <item>iguana</item>
+        <item>individualism</item>
+        <item>interest</item>
+        <item>jack</item>
+        <item>jump</item>
+        <item>join</item>
+    </string-array>
+</resources>
