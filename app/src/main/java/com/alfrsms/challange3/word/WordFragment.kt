@@ -1,5 +1,4 @@
 package com.alfrsms.challange3.word
-
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -26,7 +25,7 @@ class WordFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?)
-            : View? {
+            : View {
         _binding = FragmentWordBinding.inflate(inflater, container, false)
         return binding.root
     }

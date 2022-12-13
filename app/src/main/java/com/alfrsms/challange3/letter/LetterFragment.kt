@@ -1,5 +1,6 @@
 package com.alfrsms.challange3.letter
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.Menu
@@ -13,11 +14,16 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.alfrsms.challange3.R
+import com.alfrsms.challange3.`interface`.OnDataPass
+import com.alfrsms.challange3.`interface`.OnItemClickCallback
 import com.alfrsms.challange3.databinding.FragmentLetterBinding
+import com.alfrsms.challange3.letter.LetterAdapter
 
 class LetterFragment : Fragment() {
     private var _binding: FragmentLetterBinding? = null
     private val binding get() = _binding!!
+
+    private lateinit var onDataPass: OnDataPass
 
     private lateinit var recyclerView: RecyclerView
     private var isLinearLayoutManager = true
@@ -25,6 +31,11 @@ class LetterFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        onDataPass = context as OnDataPass
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?)
@@ -36,6 +47,14 @@ class LetterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         recyclerView = binding.recyclerView
         chooseLayout()
+
+        val letterAdapter = LetterAdapter()
+        recyclerView.adapter = letterAdapter
+        letterAdapter.onItemClickCallback(object : OnItemClickCallback {
+            override fun onItemClicked(data: String) {
+                onDataPass.onDataPass(data)
+            }
+        })
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -51,7 +70,6 @@ class LetterFragment : Fragment() {
         } else {
             recyclerView.layoutManager = GridLayoutManager(context, 2)
         }
-        recyclerView.adapter = LetterAdapter()
     }
 
     private fun setIcon(menuItem: MenuItem?) {
